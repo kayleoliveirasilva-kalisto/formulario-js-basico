@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Formulário com JS</title>
+</head>
+<body>
+
+    <div class="title">
+        <h1>Formulário com JavaScript</h1>
+    </div>
+
+    <form action="#" method="get" id="fContato">
+        <fieldset id="usuario">
+            <legend>Identificação do Usuário</legend>
+            <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="50" maxlength="30" placeholder="Nome Completo"></p>
+            <p><label for="cSenha">Senha: </label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8"></p>
+            <p><label for="cEmail">E-mail: </label><input type="email" name="tEmail" id="cEmail" size="30"></p>
+            <fieldset id="sexo">
+                <legend>Sexo</legend>
+                <input type="radio" name="tSexo" id="cMasculino" checked><label for="cMasculino"> Masculino</label><br>
+                <input type="radio" name="tSexo" id="cFeminino"><label for="cFeminino"> Feminino</label>
+            </fieldset>
+            <p><label for="cData">Nascimento: </label><input type="date" name="tData" id="cData"></p>
+        </fieldset>
+
+        <fieldset id="endereco">
+            <legend>Endereço do Usuário</legend>
+            <p><label for="cRua">Logradouro: </label><input type="text" name="tRua" id="cRua" size="30" placeholder="Rua, Avenida..."></p>
+            <p><label for="cNumero">Número: </label><input type="number" name="tNumero" id="cNumero" size="5" min="0" max="9999"></p>
+            <p><label for="cEstado">Estado: </label>
+            <select name="tEstado" id="cEstado">
+                <optgroup label="Nordeste">
+                    <option value="PI" selected>Piauí</option>
+                    <option value="CE">Ceará</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="BA">Bahia</option>
+                </optgroup>
+                <optgroup label="Norte">
+                    <option value="AM">Amazonas</option>
+                    <option value="PA">Pará</option>
+                    <option value="RO">Rondonia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="AP">Amapá</option>
+                </optgroup>
+            </select></p>
+            <p><label for="cCidade">Cidade: </label>
+            <input type="text" name="tCidade" id="cCidade" size="30" list="cidades" placeholder="Sua Cidade"></p>
+            <datalist id="cidades">
+                <option value="Teresina"></option>
+                <option value="Piripiri"></option>
+            </datalist>
+        </fieldset>
+
+        <fieldset id="mensagem">
+            <legend>Mesagem do Usuário</legend>
+            <p><label for="cUrgencia">Grau de Urgencia: </label>
+            <input type="range" name="tUrgencia" id="cUrgencia" min="0" max="10" step="2"></p>
+            <p><label for="cMensagem">Mensagem: </label>
+            <textarea name="tMensagem" id="cMensagem" cols="50" rows="3" placeholder="deixe aqui sua mensagem..."></textarea></p>
+        </fieldset>
+
+        <fieldset id="pedido">
+            <legend>Quero um Google Glass</legend>
+            <p><input type="checkbox" name="tPedido" id="cPedido" checked>
+            <label for="cPedido">Gostaria de adiquirir seu Google Glass?</label></p>
+            <p><label for="cCor">Cor: </label>
+            <input type="color" name="tCor" id="cCor" value="#0000FF"></p>
+            <p><label for="cQuantidade">Quantidade: </label>
+            <input type="number" name="tQuantidade" id="cQuantidade" min="0" max="9999" size="4" maxlength="4" onchange="calcPreco()" onload="calcPreco()"></p>
+            <!--
+            <p><label for="cPrecoFinal">Preço Final: R$</label>
+            <input type="number" name="tPrecoFinal" id="cPrecoFinal" min="0" size="8" readonly></p>
+            -->
+
+            <p><label for="cPrecoFinal">Preco Final: R$ </label><span id="cPrecoFinal"></span></p>
+        </fieldset>
+    </form>
+</body>
+</html
